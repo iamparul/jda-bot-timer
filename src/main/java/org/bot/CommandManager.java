@@ -3,9 +3,7 @@ package org.bot;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import org.bot.command.CommandContext;
 import org.bot.command.ICommand;
-import org.bot.command.commands.HelpCommand;
-import org.bot.command.commands.PingCommand;
-import org.bot.command.commands.PriceCommand;
+import org.bot.command.commands.*;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
@@ -20,7 +18,9 @@ public class CommandManager {
     public CommandManager() {
         addCommand(new PingCommand());
         addCommand(new HelpCommand(this));
-        addCommand(new PriceCommand(this));
+        addCommand(new PriceCommand());
+        addCommand(new InfoCommand());
+        addCommand(new TrendingCoinsCommand());
     }
 
     private void addCommand(ICommand cmd) {

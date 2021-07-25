@@ -1,5 +1,7 @@
 package org.bot;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.bot.dto.PriceDTO;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -15,7 +17,7 @@ public class CryptoRequest {
         this.url = url;
     }
 
-    public static String getCoinPrice(String ids, String currency) {
+    public static PriceDTO getCoinPrice(String ids, String currency) {
         String inr = "";
         try {
             String readLine = null;
@@ -33,13 +35,16 @@ public class CryptoRequest {
                 in.close();
                 JSONObject jsonObject = new JSONObject(response.toString());
                 System.out.println("JSON String Result " + response.toString());
-                inr = jsonObject.getJSONObject(ids).get(currency).toString();
+                ObjectMapper objectMapper = new ObjectMapper();
+                PriceDTO priceDTO = objectMapper.readValue(response.toString(), PriceDTO.class);
+                return priceDTO;
             } else {
                 System.out.println("GET NOT WORKED");
+                return null;
             }
         }catch (Exception e){
             e.printStackTrace();
         }
-        return inr;
+        return null;
     }
 }

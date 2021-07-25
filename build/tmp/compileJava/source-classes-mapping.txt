@@ -1,22 +1,38 @@
+org/bot/dto/Coin.java
+ org.bot.dto.Coin
+org/bot/command/commands/PingCommand.java
+ org.bot.command.commands.PingCommand
+org/bot/dto/Item.java
+ org.bot.dto.Item
+org/bot/Main.java
+ org.bot.Main
+org/bot/command/commands/InfoCommand.java
+ org.bot.command.commands.InfoCommand
+org/bot/command/CommandContext.java
+ org.bot.command.CommandContext
+org/bot/TrendingCoinsRequest.java
+ org.bot.TrendingCoinsRequest
+org/bot/dto/Bitcoin.java
+ org.bot.dto.Bitcoin
+org/bot/dto/TrendingCoinDTO.java
+ org.bot.dto.TrendingCoinDTO
 org/bot/PropertyReader.java
  org.bot.PropertyReader
  org.bot.PropertyReader$1
  org.bot.PropertyReader$LazyHolder
-org/bot/Main.java
- org.bot.Main
-org/bot/command/CommandContext.java
- org.bot.command.CommandContext
-org/bot/CryptoRequest.java
- org.bot.CryptoRequest
-org/bot/command/commands/PingCommand.java
- org.bot.command.commands.PingCommand
 org/bot/command/ICommand.java
  org.bot.command.ICommand
 org/bot/command/commands/HelpCommand.java
  org.bot.command.commands.HelpCommand
-org/bot/command/commands/PriceCommand.java
- org.bot.command.commands.PriceCommand
-org/bot/CommandManager.java
- org.bot.CommandManager
 org/bot/Listener.java
  org.bot.Listener
+org/bot/command/commands/PriceCommand.java
+ org.bot.command.commands.PriceCommand
+org/bot/CryptoRequest.java
+ org.bot.CryptoRequest
+org/bot/dto/PriceDTO.java
+ org.bot.dto.PriceDTO
+org/bot/CommandManager.java
+ org.bot.CommandManager
+org/bot/command/commands/TrendingCoinsCommand.java
+ org.bot.command.commands.TrendingCoinsCommand

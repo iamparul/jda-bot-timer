@@ -5,15 +5,12 @@ import org.bot.CommandManager;
 import org.bot.CryptoRequest;
 import org.bot.command.CommandContext;
 import org.bot.command.ICommand;
+import org.bot.dto.Bitcoin;
+import org.bot.dto.PriceDTO;
 
 import java.util.List;
 
 public class PriceCommand implements ICommand {
-    private final CommandManager manager;
-
-    public PriceCommand(CommandManager manager) {
-        this.manager = manager;
-    }
 
     @Override
     public void handle(CommandContext ctx) {
@@ -21,7 +18,9 @@ public class PriceCommand implements ICommand {
         TextChannel channel = ctx.getChannel();
         System.out.println(args);
         try {
-            String coinPrice = CryptoRequest.getCoinPrice(args.get(0),args.get(1));
+            PriceDTO dto = CryptoRequest.getCoinPrice(args.get(0),args.get(1));
+            Bitcoin bitcoin = dto.getBitcoin();
+            int coinPrice = bitcoin.getInr();
             channel.sendMessage(args.get(0) + " price in " + args.get(1) + " is " + coinPrice).queue();
         } catch (Exception e) {
             e.printStackTrace();
